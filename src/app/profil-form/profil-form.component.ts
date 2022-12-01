@@ -9,7 +9,7 @@ import { ProfilService } from '../services/profil.service';
   styleUrls: ['./profil-form.component.css']
 })
 export class ProfilFormComponent implements OnInit {
-
+ 
   public profile: Profile;
   public action : string;
 
@@ -33,6 +33,8 @@ export class ProfilFormComponent implements OnInit {
       }
   }
   saveProfile(){
+    let id= this.currentRoute.snapshot.params['id'];
+
     if(this.action == "save"){
         //this.productService.list.push(this.product);
         this.profilService.addProfil(this.profile).subscribe(

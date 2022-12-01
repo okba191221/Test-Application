@@ -9,6 +9,7 @@ import { ProfilService } from '../services/profil.service';
   styleUrls: ['./my-profile.component.css']
 })
 export class MyProfileComponent implements OnInit {
+  public list: Profile[];
   public profile: Profile;
   public action : string;
 
@@ -23,5 +24,13 @@ export class MyProfileComponent implements OnInit {
       )
 
       
+  }
+  delete(profile:Profile){
+    this.profilService.deleteProfil(profile.id).subscribe(
+      ()=>{
+        let i= this.list.indexOf(profile)
+        this.list.splice(i,1)
+       }
+    );
   }
 }
