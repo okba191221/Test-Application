@@ -39,20 +39,12 @@ export class ListProductComponent implements OnInit {
     );
   }
   
-  myFunction() {
-    // Get the checkbox
-    var checkBox = document.getElementById("myCheck") as HTMLInputElement | null;
-    // Get the output text
-    var text = document.getElementById("text");
-    
-    // If the checkbox is checked, display the output text
-    if (checkBox != null && text != null) {
-      if (checkBox.checked == true){
-        text.style.display = "block";
-      } else {
-        text.style.display = "none";
-      }
-    } 
+  myFunction(p:Product) {
+    p.status = true
+    // G:proet the checkbox;
+    this.productService.updateProduct(p.id,p).subscribe(()=>{this.productService.getListProduct().subscribe(
+      (data: Product[])=> this.list= data
+     );})
   }
 
 }

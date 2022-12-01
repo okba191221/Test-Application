@@ -5,4 +5,5 @@ export class Product{
   price: number;
   nbrLike: number;
   quantity: number;
+  status: boolean;
 }

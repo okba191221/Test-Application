@@ -11,15 +11,3 @@ if (environment.production) {
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
-  const checkbox = document.getElementById(
-    'subscribe',
-  ) as HTMLInputElement | null;
-  
-  if (checkbox != null) {
-    // ✅ Set checkbox checked
-    checkbox.checked = true;
-  
-    // ✅ Set checkbox unchecked
-     checkbox.checked = false;
-  }
-  

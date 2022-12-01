@@ -25,8 +25,8 @@
         <a class="btn btn-sm btn-success"
         [routerLink]="['/update',product.id]">update</a> &nbsp;
 
-        Status: <input type="checkbox" id="myCheck" onclick="myFunction()"> 
-        <p id="text" style="display:none">Checkbox is CHECKED!</p>       
+        Status: <input type="checkbox" id="myCheck" (click)="myFunction(product)" [checked]="product.status"> 
+        <p id="text" style="display:none">Checkbox is CHECKED!</p>  &nbsp;
       </div>
     </div>
   </div>
