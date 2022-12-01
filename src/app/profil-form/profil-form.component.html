@@ -1,0 +1,83 @@
+<h1>edit profile</h1>
+<form #f="ngForm">
+  <div class="form-group col-md-6">
+    <label>Name</label>
+    <input type="text" #n="ngModel" minlength="3" required [(ngModel)]="profile.name" name="title" class="form-control">
+    <div class="alert alert-danger" *ngIf="n.invalid && n.touched">
+        <p *ngIf="n.hasError('required')">this field is required</p>
+        <p *ngIf="n.hasError('minlength')">minlength is equal to 3</p>
+    </div>
+  </div>
+
+ 
+  <div class="form-group col-md-6">
+    <label> profesion </label>
+    <input type="text" required  [(ngModel)]="profile.profesion" name="profession" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Picture</label>
+    <input type="text"  [(ngModel)]="profile.picture" name="picture" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> experience</label>
+    <input type="number"  [(ngModel)]="profile.experience" name="experience" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Email </label>
+    <input type="text"  [(ngModel)]="profile.email" name="email" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Website </label>
+    <input type="text"  [(ngModel)]="profile.website" name="website" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Phone</label>
+    <input type="number"  [(ngModel)]="profile.phone" name="phone" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> description</label>
+    <input type="text"  [(ngModel)]="profile.description" name="description" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Skill (primary)</label>
+    <input type="text"  [(ngModel)]="profile.skill_1" name="skill_1" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Pourcentage skill ability</label>
+    <input type="number"  [(ngModel)]="profile.valueSkill_1" name="valueSkill_1" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Secondary skill </label>
+    <input type="texte"  [(ngModel)]="profile.skill_2" name="skill_2" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Pourcentage skill ability</label>
+    <input type="number"  [(ngModel)]="profile.valueSkill_2" name="valueSkill_2" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Tertiary Skill</label>
+    <input type="text"  [(ngModel)]="profile.skill_3" name="skill_3" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Pourcentage ability skill</label>
+    <input type="number"  [(ngModel)]="profile.valueSkill_3" name="valueSkill_3" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Other skills</label>
+    <input type="text"  [(ngModel)]="profile.skill_4" name="skill_4" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Poucentage ability skill</label>
+    <input type="number"  [(ngModel)]="profile.valueSkill_4" name="valueSkill_4" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Education </label>
+    <input type="text"  [(ngModel)]="profile.education" name="education" class="form-control">
+  </div>
+  <br>
+  <button  [disabled]="f.invalid" class="btn btn-success"
+  (click)="saveProfile()">
+  {{action}}
+  </button>
+</form>
+<br>

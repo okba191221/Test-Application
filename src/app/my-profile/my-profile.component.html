@@ -1,8 +1,12 @@
 <section class="bg-light">
     <div class="container">
-        <button class="btn btn-sm btn-success" >
+        <button class="btn btn-sm btn-success" [routerLink]="['/edit',profile.id]">
             edit profile
           </button>
+          <button class="btn btn-sm btn-success" [routerLink]="['/profils']">
+            add profile
+          </button>
+
         <div class="row">
             <div class="col-lg-12 mb-4 mb-sm-5">
                 <div class="card card-style1 border-0">

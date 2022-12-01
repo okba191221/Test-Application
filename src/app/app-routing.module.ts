@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { ProfilFormComponent } from './profil-form/profil-form.component';
 
 
 
@@ -14,7 +15,9 @@ const routes: Routes = [
   {path:'list',component: ListProductComponent},
   {path:'new', component: ProductFormComponent},
   {path:'update/:id', component: ProductFormComponent},
-  {path:'me', component: MyProfileComponent},
+  {path:'me/:id', component: MyProfileComponent},
+  {path:'profils', component: ProfilFormComponent},
+  {path:'edit/:id', component: ProfilFormComponent},
   {path:'**', component: NotFoundComponent}
 
 ];

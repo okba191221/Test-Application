@@ -12,7 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule}  from '@angular/common/http';
-import { MyProfileComponent } from './my-profile/my-profile.component'
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { ProfilFormComponent } from './profil-form/profil-form.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { MyProfileComponent } from './my-profile/my-profile.component'
     ProductFormComponent,
     HomeComponent,
     NotFoundComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    ProfilFormComponent
   ],
   imports: [
     BrowserModule,
