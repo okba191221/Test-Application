@@ -1,0 +1,32 @@
+<h1>Add a new course</h1>
+<form #f="ngForm">
+  <div class="form-group col-md-6">
+    <label>Course Name</label>
+    <input type="text" #n="ngModel" minlength="3" required [(ngModel)]="product.name" name="title" class="form-control">
+    <div class="alert alert-danger" *ngIf="n.invalid && n.touched">
+        <p *ngIf="n.hasError('required')">this field is required</p>
+        <p *ngIf="n.hasError('minlength')">minlength is equal to 3</p>
+    </div>
+  </div>
+
+
+
+  <div class="form-group col-md-6">
+    <label> price </label>
+    <input type="number" required  [(ngModel)]="product.price" name="price" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label>Course Picture</label>
+    <input type="text"  [(ngModel)]="product.picture" name="picture" class="form-control">
+  </div>
+  <div class="form-group col-md-6">
+    <label> Number of participant available </label>
+    <input type="number"  [(ngModel)]="product.quantity" name="quantity" class="form-control">
+  </div>
+  <br>
+  <button  [disabled]="f.invalid" class="btn btn-success"
+  (click)="saveProduct()">
+    {{action}}
+  </button>
+</form>
+<br>

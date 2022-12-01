@@ -1,0 +1,33 @@
+<h1>{{title}}</h1>
+<div class="row">
+  <div class="col-md-3" *ngFor="let product of list">
+    <div class="card" style="width: 18rem;">
+      <img src="{{product.picture}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">
+          price: {{product.price}} $<br>
+          quantity: {{product.quantity}}
+        </p>
+        <button (click)="incrementLike(product)" class="btn btn-sm btn-primary">
+          like {{product.nbrLike}}
+        </button>
+        <button [disabled]="product.quantity==0" id="buy" (click)="buy(product)" class="btn btn-sm btn-warning">
+          buy {{product.quantity}}
+        </button>
+        <p *ngIf="product.quantity==0">
+          Non available
+        </p>
+        &nbsp;
+        <button class="btn btn-sm btn-danger" (click)="delete(product)">
+          delete
+        </button>     &nbsp;
+        <a class="btn btn-sm btn-success"
+        [routerLink]="['/update',product.id]">update</a> &nbsp;
+
+        Status: <input type="checkbox" id="myCheck" onclick="myFunction()"> 
+        <p id="text" style="display:none">Checkbox is CHECKED!</p>       
+      </div>
+    </div>
+  </div>
+</div>
