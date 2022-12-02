@@ -13,7 +13,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule}  from '@angular/common/http';
 import { MyProfileComponent } from './my-profile/my-profile.component';
-import { ProfilFormComponent } from './profil-form/profil-form.component'
+import { ProfilFormComponent } from './profil-form/profil-form.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +27,15 @@ import { ProfilFormComponent } from './profil-form/profil-form.component'
     HomeComponent,
     NotFoundComponent,
     MyProfileComponent,
-    ProfilFormComponent
+    ProfilFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

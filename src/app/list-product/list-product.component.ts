@@ -1,6 +1,7 @@
 import { Product } from './../model/product';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-list-product',
@@ -46,5 +47,10 @@ export class ListProductComponent implements OnInit {
       (data: Product[])=> this.list= data
      );})
   }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.list, event.previousIndex, event.currentIndex);
+  }
+  
 
 }
